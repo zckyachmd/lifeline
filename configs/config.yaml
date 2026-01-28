@@ -1,0 +1,23 @@
+telegram:
+  token: "YOUR_TELEGRAM_BOT_TOKEN"
+  admin_chat_ids: [123456789]
+  poll_timeout: 30
+
+dsm:
+  base_url: "http://192.168.1.100:5000"
+  api_token: "DSM_API_TOKEN"
+  token_refresh_hours: 24
+
+security:
+  rate_limit: 5
+  cmd_whitelist: ["ls","df","ps"]
+  confirm_ttl_seconds: 60
+  default_mode: "readonly"
+  max_request_per_min: 5
+
+sandbox:
+  root: "/emergency-files"
+  max_file_mb: 50
+
+logging:
+  level: "info"

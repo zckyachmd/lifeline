@@ -1,0 +1,21 @@
+[Unit]
+Description=LIFELINE Telegram DSM Bot
+After=network-online.target docker.service
+Wants=network-online.target
+
+[Service]
+User=lifeline
+Group=lifeline
+Environment=CONFIG_PATH=/etc/lifeline/config.yaml
+EnvironmentFile=-/etc/lifeline/lifeline.env
+ExecStart=/usr/local/bin/telegram-dsm-bot
+Restart=on-failure
+RestartSec=5
+NoNewPrivileges=true
+ProtectSystem=strict
+ProtectHome=yes
+ReadWritePaths=/emergency-files /var/log
+# Adjust if binary located elsewhere
+
+[Install]
+WantedBy=multi-user.target
