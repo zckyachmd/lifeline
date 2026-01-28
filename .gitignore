@@ -1,0 +1,30 @@
+# Build outputs
+bin/
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Go modules cache
+vendor/
+
+# IDE/editor
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+
+# Env & secrets
+.env
+.env.*
+*.local
+
+# Coverage / test
+coverage.out
+*.test
+
+# Logs & runtime
+*.log
+/emergency-files/

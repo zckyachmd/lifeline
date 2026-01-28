@@ -5,10 +5,13 @@ BINDIR := $(PREFIX)/bin
 CONFIG_DIR ?= /etc/lifeline
 SERVICE_FILE := configs/lifeline.service
 
-.PHONY: build test fmt run install install-service clean
+.PHONY: build build-linux test fmt run install install-service clean
 
 build: fmt
 	GO111MODULE=on go build -o $(BIN) ./cmd/bot
+
+build-linux: fmt
+	GO111MODULE=on GOOS=linux GOARCH=amd64 go build -o $(BIN)-linux-amd64 ./cmd/bot
 
 test:
 	go test ./...
